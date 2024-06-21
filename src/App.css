@@ -50,7 +50,7 @@
     body{
         background-image: url('../public/images/headerBgDesktop.webp');
         background-repeat: no-repeat;
-        background-size: cov;
+        background-size: cover;
     }
     a:hover{
         text-decoration: none;
