@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Nav from './Nav';
 import Card from './Card';
+import Main from '../Main/Main';
 
 export default function Header() {
 
@@ -23,6 +24,7 @@ export default function Header() {
 
     const [Dark, setDark] = useState(0)
     const [IsMenu,setIsMenu]=useState(0)
+    const [IsCard,setIsCard]=useState(0)
     const [IsSubMenu,setIsSubMenu]=useState(0)
 
     // change mode dark
@@ -41,18 +43,27 @@ export default function Header() {
         setDark(!Dark)
 
     }
-
+   
+    // handel show menu
     const handleMenu=(event)=>{
         setIsMenu(1)
        
     }
 
+    // handle show shop card
+    const handleCard=()=>{
+        setIsCard(1)
+    }
+
+    // for show submenu of menus
     const showSubMenu=()=>{
         setIsSubMenu(!IsSubMenu)
     }
 
+    // close menu
     const closeMenu=()=>{
         setIsMenu(0)
+        setIsCard(0)
     }
 
     return (
@@ -195,7 +206,7 @@ export default function Header() {
             </div>
         </header>
         {/* Header mobile */}
-        <div className='flex overflow-y-auto lg:hidden items-center justify-between bg-white dark:bg-zinc-700 px-5 h-16'>
+        <div className='flex lg:hidden overflow-y-auto items-center justify-between bg-white dark:bg-zinc-700 px-5 h-16 child:text-white'>
             {/* Nav Mobile */}
              <div onClick={handleMenu}>
                
@@ -296,14 +307,76 @@ export default function Header() {
             {/* Cart */} 
              <div>
 
-               <svg className='w-6 h-6 dark:text-white'>
+               <svg onClick={handleCard} className='w-6 h-6 dark:text-white'>
                   <use href='#shopping-cart'></use>
                </svg>
              </div>
+
+             {/* shop cart */}
+             <div className={`${IsCard ? 'left-64 transition-all duration-1000 fixed top-0 bottom-0 w-64 bg-white dark:bg-zinc-700 z-20 min-h-screen  px-4 pt-3' : '-left-64 duration-1000  fixed top-0 bottom-0 w-64 bg-white dark:bg-zinc-700 z-20 min-h-screen  px-4 pt-3' }`}>
+                    {/* Header Nav */}
+                    <div className='flex justify-between items-center  border-b gap-x-12 pb-5 border-gray-100 mt-3'>
+                            <svg onClick={closeMenu} className='h-5 w-5 text-zinc-700'>
+                                    <use href='#delete'>
+                                        
+                                    </use>
+                            </svg>  
+                            <span>سبد خرید</span> 
+                    </div>
+                    {/* Body Div */}
+                    <div className='font-Dana'>
+                         
+                       <div className='flex border-b border-gray-100 py-4'>
+                            <div className='w-[90px] h-[90px]'>
+                                    <img src='images/products/p1.png'></img>
+                                </div>
+                                <div className='flex flex-col justify-between'>
+                                    <h4 className='text-sm font-DanaMedium w-32'>قهوه اسپرسو بن مانو مدل پریسکا 250 گرمی</h4>
+                                    <div>
+                                        <span className='dark:text-emerald-500 text-xs text-teal-600'>14.500 تومان تخفیف</span>
+                                        <div className='text-base font-DanaBold'>
+                                        175,000 
+                                            <span className='text-sm font-Dana '> تومان </span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>   
+                  
+                        <div className='flex  border-b border-gray-100  py-4 '>
+                            <div className='w-[90px] h-[90px]'>
+                                    <img src='images/products/p2.png'></img>
+                                </div>
+                                <div className='flex flex-col justify-between'>
+                                    <h4 className='text-sm font-DanaMedium w-32'>قهوه اسپرسو بن مانو مدل پریسکا 250 گرمی</h4>
+                                    <div>
+                                        <span className='text-xs text-teal-600'>14.500 تومان تخفیف</span>
+                                        <div className='text-base font-DanaBold'>
+                                        175,000 
+                                            <span className='text-sm font-Dana '> تومان </span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>   
+                    </div>
+                    {/* Footer Div */}
+                    <div className='flex justify-between mt-auto'>
+                       <a href='#' className='dark:bg-emerald-500 bg-teal-600 w-28 h-11 rounded-xl flex items-center justify-center text-white'>ثبت سفارش</a>
+                       <div className='flex flex-col  text-xs'>
+                           <span className='text-gray-300'>مبلغ قابل پرداخت</span>
+                           <div className='font-DanaBold'>
+                              350,000 
+                              <span className='font-Dana'>تومان</span>
+                           </div>
+                       </div>
+                         
+                    </div>
+
+        </div>
+           
         </div>
         <div className='lg:hidden fixed overlay inset-0 w-full h-full bg-black/40 z-10' ></div>
-     
-   
+      
+         <Main/>
       </>
 
     )

@@ -47,11 +47,7 @@
         font-display: swap;
     }
 
-    body{
-        background-image: url('../public/images/headerBgDesktop.webp');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+ 
     a:hover{
         text-decoration: none;
         color: #FDBA74;

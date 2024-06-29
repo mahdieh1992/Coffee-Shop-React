@@ -3,7 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  darkMode:'class',
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -20,34 +20,53 @@ module.exports = {
       borderRadius: {
         '4xl': '2rem'
       },
-      fontFamily:{
-        'Dana':'Dana',
-        'DanaMedium':'DanaMedium',
-        'DanaBold':'DanaBold',
-        'Morabba-Medium':'Morabba-Medium',
-        'Morabba-Bold':'Morabba-Bold',
-        'Morabba-Light':'Morabba-Light'
+      fontFamily: {
+        'Dana': 'Dana',
+        'DanaMedium': 'DanaMedium',
+        'DanaBold': 'DanaBold',
+        'Morabba-Medium': 'Morabba-Medium',
+        'Morabba-Bold': 'Morabba-Bold',
+        'Morabba-Light': 'Morabba-Light'
       },
-      letterSpacing:{
-        'tightest':'-0.065em'
+      letterSpacing: {
+        'tightest': '-0.065em'
       },
-      width:{
-        '30':'7.5rem',
+      width: {
+        '30': '7.5rem',
 
       },
-      height:{
-        '30':'7.5rem'
+      height: {
+        '30': '7.5rem'
       }
-    
-      
 
+
+
+    },
+    screens: {
+      'xs':'480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
+    container:{
+      'center':true,
+      padding:{
+        DEFAULT:'1rem',
+        md:'0.625rem'
+      }
+    },
+    backgroundImage:{
+      'Home-Desktop':"url(../public/images/headerBgDesktop.webp)",
+      'Home-Mobile':"url(../public/images/headerBgMobile.webp)"
+      
     }
   },
   plugins: [
 
-    function({addVariant}){
-      addVariant('child','& > *');
-      addVariant('child-hover','& > *:hover');
+    function ({ addVariant }) {
+      addVariant('child', '& > *');
+      addVariant('child-hover', '& > *:hover');
 
     }
   ],
