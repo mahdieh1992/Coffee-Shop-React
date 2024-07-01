@@ -47,10 +47,39 @@
         font-display: swap;
     }
 
- 
+    body{
+        height: 2000px;
+     }
+
     a:hover{
         text-decoration: none;
         color: #FDBA74;
     }
+    
+ @media screen and (min-width:1280px) {
+    .product{
+        background-image: linear-gradient(rgba(17, 17, 17, 0.65),rgba(17, 17, 17, 0.65)),url('../public/images/body-bg.png');
+        height: 900px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+    }
+    .products{
+        background-image: linear-gradient(rgba(243,244,246,0.65),rgba(243,244,246,0.65)), url('../public/images/body-bg.png');
+        height: 900px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+  
+    
+ }
 
 }
+
+@layer components{
+    .circle{
+        @apply border rounded-full  bottom-0 left-0 right-0 mx-auto
+
+    }
+}
+

@@ -68,7 +68,7 @@ export default function Header() {
 
     return (
       <>
-        <header className='hidden lg:flex fixed top-9 left-0 right-0  bg-black/50 w-[90%] h-24 mx-auto items-center rounded-2xl py-5 px-10 text-xl backdrop-blur-[6px]'>
+        <header className='hidden z-50 lg:flex fixed top-9 left-0 right-0  bg-black/50 w-[90%] h-24 mx-auto items-center rounded-2xl py-5 px-10 text-xl backdrop-blur-[6px]'>
             <div className='flex justify-between w-full items-center '>
                 {/* All App Icon */}
                 <svg className='hidden'>
@@ -376,7 +376,7 @@ export default function Header() {
         </div>
         <div className='lg:hidden fixed overlay inset-0 w-full h-full bg-black/40 z-10' ></div>
       
-         <Main/>
+         <Main dark={Dark}/>
       </>
 
     )
