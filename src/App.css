@@ -74,6 +74,7 @@
     
  }
 
+
 }
 
 @layer components{
@@ -81,5 +82,21 @@
         @apply border rounded-full  bottom-0 left-0 right-0 mx-auto
 
     }
+
+    .product-header{
+        @apply flex justify-between items-end
+    }
+    .product-title{
+        @apply  text-2xl  md:text-4xl tracking-tight font-Morabba-Light font-bold text-gray-700 
+    }
+    .product-subtitle{
+
+        @apply text-lg md:text-3xl tracking-tight font-Morabba-Light  text-gray-700 mt-1.5
+    }
+    .product-link{ 
+        @apply flex text-base md:text-xl gap-x-1 text-orange-300 items-center font-Dana tracking-tightest hover:bg-orange-200/20 h-10 rounded-md pl-1 pr-3
+    } 
+
+    
 }
 
